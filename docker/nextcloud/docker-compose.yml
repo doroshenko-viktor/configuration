@@ -1,33 +1,30 @@
 version: "3"
 
-volumes:
-  postgres:
-  nextcloud:
-
 services:
-  db:
+  postgres:
     image: postgres
     restart: always
-    environment:
-      POSTGRES_DB: main
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: asdfhadsf
     ports:
       - 5432:5432
     volumes:
-      - postgres:/var/lib/postgresql/data
+      - /mnt/ext/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=main
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=asdfhadsf
 
   nextcloud:
     image: nextcloud
     restart: always
     ports:
       - 8080:80
-    links:
-      - db
     volumes:
-      - nextcloud:/var/www/html
+      - /mnt/ext/nextcloud:/var/www/html
+    links:
+      - postgres:5432
     environment:
       - POSTGRES_PASSWORD=nextcloud
       - POSTGRES_DB=nextcloud
       - POSTGRES_USER=nextcloud
-      - POSTGRES_HOST=db
+      - POSTGRES_HOST=postgres
+
