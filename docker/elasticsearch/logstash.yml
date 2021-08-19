@@ -1,0 +1,14 @@
+version: "3"
+services:
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.14.0
+    container_name: logstash
+    ports:
+      - 9600:9600
+      - 5044:5044
+    command: 
+      # - -e 'input{ stdin{}} output{ stdout{}}'
+      - -f /usr/share/logstash/pipeline/logstash.conf
+    volumes:
+      - ~/docker/volumes/logstash/pipeline:/usr/share/logstash/pipeline
+      - ~/docker/volumes/logstash/data:/usr/share/logstash/data
