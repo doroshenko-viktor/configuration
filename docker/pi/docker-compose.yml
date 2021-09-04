@@ -30,7 +30,7 @@ services:
       - 5601:5601
     environment:
       - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
-    depends_on: ['elasticsearch']
+    depends_on: ["elasticsearch"]
     networks:
       - elastic
   jenkins:
@@ -40,15 +40,13 @@ services:
       - 8080:8080
       - 50000:50000
     volumes:
-      - ~/docker/jenkins/jenkins_home:/var/jenkins_home
-      - ~/docker/jenkins/jenkins_backup:/tmp/jenkins-backup
+      - ~/docker/volumes/jenkins/jenkins_home:/var/jenkins_home
+      - ~/docker/volumes/jenkins/jenkins_backup:/tmp/jenkins-backup
     networks:
       - jenkins_net
 
-
-networks: 
+networks:
   elastic:
     driver: bridge
   jenkins_net:
     driver: bridge
-
