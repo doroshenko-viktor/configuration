@@ -1,17 +1,17 @@
 version: "3"
 
 services:
-  # postgres:
-  #   image: postgres
-  #   restart: always
-  #   ports:
-  #     - 5432:5432
-  #   volumes:
-  #     - ~/docker/volumes/postgres:/var/lib/postgresql
-  #   environment:
-  #     - POSTGRES_DB=main
-  #     - POSTGRES_USER=admin
-  #     - POSTGRES_PASSWORD=qwerty123
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - ~/docker/volumes/postgres:/var/lib/postgresql
+    environment:
+      - POSTGRES_DB=main
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=qwerty123
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.14.0
     ports:
@@ -24,23 +24,26 @@ services:
       # - ~/docker/volumes/elasticsearch/config:/usr/share/elasticsearch/config
     networks:
       - elastic
-  # kibana:
-  #   image: docker.elastic.co/kibana/kibana:7.14.0
-  #   ports:
-  #     - 5601:5601
-  #   environment:
-  #     - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
-  #   depends_on: ['elasticsearch']
-  #   networks:
-  #     - elastic
-  # jenkins:
-  #   image: jenkins/jenkins:latest
-  #   restart: always
-  #   ports:
-  #     - 8080:8080
-  #     - 50000:50000
-  #   networks:
-  #     - jenkins_net
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.14.0
+    ports:
+      - 5601:5601
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    depends_on: ['elasticsearch']
+    networks:
+      - elastic
+  jenkins:
+    image: jenkins/jenkins:latest
+    restart: always
+    ports:
+      - 8080:8080
+      - 50000:50000
+    volumes:
+      - ~/docker/jenkins/jenkins_home:/var/jenkins_home
+      - ~/docker/jenkins/jenkins_backup:/tmp/jenkins-backup
+    networks:
+      - jenkins_net
 
 
 networks: 
