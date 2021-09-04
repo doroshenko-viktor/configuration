@@ -7,7 +7,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ~/docker/volumes/postgres/data:/var/lib/postgresql/data
+      - ~/docker/volumes/postgres:/var/lib/postgresql
     environment:
       - POSTGRES_DB=main
       - POSTGRES_USER=admin
@@ -20,7 +20,7 @@ services:
     environment:
       - discovery.type=single-node
     volumes:
-      - ~/docker/volumes/elasticsearch/data:/usr/share/elasticsearch/data
+      - ~/docker/volumes/elasticsearch:/usr/share/elasticsearch
     networks:
       - elastic
   kibana:
