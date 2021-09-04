@@ -7,24 +7,44 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - /mnt/ext/postgres:/var/lib/postgresql/data
+      - ~/docker/volumes/postgres:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=main
       - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=asdfhadsf
-
-  nextcloud:
-    image: nextcloud
+      - POSTGRES_PASSWORD=qwerty123
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.14.0
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      - discovery.type=single-node
+    volumes:
+      - ~/docker/volumes/postgres:/usr/share/elasticsearch/data
+    networks:
+      - elastic
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.14.0
+    ports:
+      - 5601:5601
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    depends_on: ['elasticsearch']
+    networks:
+      - elastic
+  jenkins:
+    image: jenkins/jenkins:latest
     restart: always
     ports:
-      - 8080:80
-    volumes:
-      - /mnt/ext/nextcloud:/var/www/html
-    links:
-      - postgres:5432
-    environment:
-      - POSTGRES_PASSWORD=nextcloud
-      - POSTGRES_DB=nextcloud
-      - POSTGRES_USER=nextcloud
-      - POSTGRES_HOST=postgres
+      - 8080:8080
+      - 50000:50000
+    networks:
+      - jenkins_net
+
+
+networks: 
+  elastic:
+    driver: bridge
+  jenkins_net:
+    driver: bridge
 
