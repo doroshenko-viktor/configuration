@@ -20,7 +20,8 @@ services:
     environment:
       - discovery.type=single-node
     volumes:
-      - ~/docker/volumes/elasticsearch:/usr/share/elasticsearch
+      - ~/docker/volumes/elasticsearch/data:/usr/share/elasticsearch/data
+      - ~/docker/volumes/elasticsearch/config:/usr/share/elasticsearch/config
     networks:
       - elastic
   # kibana:
