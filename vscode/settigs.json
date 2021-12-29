@@ -1,11 +1,14 @@
 {
-  "editor.cursorBlinking": "smooth",
+  "editor.hover.enabled": false, // disable hint widnow on mouse hover
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.cursorBlinking": "expand",
   "editor.cursorSmoothCaretAnimation": true,
   "editor.minimap.enabled": false,
   "editor.wordWrap": "on",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorCustomizations": {},
-  "workbench.tree.indent": 25,
+  "workbench.tree.indent": 19,
   "explorer.autoReveal": false,
   "cSpell.userWords": [
     "abramyan",
@@ -23,6 +26,7 @@
     "datalake",
     "Destructure",
     "dhcpcd",
+    "Doroshenko",
     "Dtos",
     "entites",
     "finalizers",
@@ -80,7 +84,9 @@
     "uncommit",
     "untracked",
     "upsert",
+    "Usecase",
     "Validatable",
+    "Viktor",
     "virtualizes",
     "vpgrp",
     "vptech",
@@ -95,7 +101,6 @@
   },
   "swaggerViewer.previewInBrowser": true,
   "diffEditor.ignoreTrimWhitespace": false,
-  "python.jediEnabled": false,
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
   "files.exclude": {
@@ -111,8 +116,12 @@
   "vim.vimrc.path": "/Users/vdoroshenko/.vimrc",
   "vim.normalModeKeyBindings": [
     {
-      "before": ["<C-j>"],
-      "after": ["<CR><ESC>"]
+      "before": [
+        "<C-j>"
+      ],
+      "after": [
+        "<CR><ESC>"
+      ]
     }
   ],
   "python.languageServer": "Pylance",
@@ -128,12 +137,28 @@
   "vim.commandLineModeKeyBindings": [],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<C-e>"],
-      "after": ["<C-e>", "<C-e>", "<C-e>", "<C-e>", "<C-e>"]
+      "before": [
+        "<C-e>"
+      ],
+      "after": [
+        "<C-e>",
+        "<C-e>",
+        "<C-e>",
+        "<C-e>",
+        "<C-e>"
+      ]
     },
     {
-      "before": ["<C-y>"],
-      "after": ["<C-y>", "<C-y>", "<C-y>", "<C-y>", "<C-y>"]
+      "before": [
+        "<C-y>"
+      ],
+      "after": [
+        "<C-y>",
+        "<C-y>",
+        "<C-y>",
+        "<C-y>",
+        "<C-y>"
+      ]
     }
   ],
   "[jsonc]": {
@@ -146,18 +171,16 @@
   "omnisharp.enableEditorConfigSupport": true,
   "omnisharp.enableImportCompletion": true,
   "omnisharp.enableRoslynAnalyzers": true,
-  "omnisharp.path": "latest",
+  // "omnisharp.path": "latest",
+  // "omnisharp.path": "1.23.17",
   "omnisharp.useGlobalMono": "never",
   "omnisharp.minFindSymbolsFilterLength": 3,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.pinnedTabSizing": "shrink",
-  "workbench.editor.showTabs": false,
   "workbench.fontAliasing": "antialiased",
   "workbench.tree.renderIndentGuides": "always",
   "editor.renderControlCharacters": true,
   "debug.onTaskErrors": "showErrors",
-  "python.pythonPath": "/usr/local/opt/python@3.8/bin/python3.8",
-  "todo-tree.tree.showScanModeButton": false,
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -217,11 +240,10 @@
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "omnisharp.organizeImportsOnFormat": true,
-  "hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWxcIixcImN1c3RvbUxpYnJhcmllc1wiOltcIkwuc2NyYXRjaHBhZFwiXSxcInBsdWdpbnNcIjpbXSxcInJlY2VudENvbG9yc1wiOltdLFwiZm9ybWF0V2lkdGhcIjpcIjI0MFwiLFwiY3JlYXRlVGFyZ2V0XCI6ZmFsc2UsXCJwYWdlRm9ybWF0XCI6e1wieFwiOjAsXCJ5XCI6MCxcIndpZHRoXCI6ODUwLFwiaGVpZ2h0XCI6MTEwMH0sXCJzZWFyY2hcIjp0cnVlLFwic2hvd1N0YXJ0U2NyZWVuXCI6dHJ1ZSxcImdyaWRDb2xvclwiOlwiI2QwZDBkMFwiLFwiZGFya0dyaWRDb2xvclwiOlwiIzZlNmU2ZVwiLFwiYXV0b3NhdmVcIjp0cnVlLFwicmVzaXplSW1hZ2VzXCI6bnVsbCxcIm9wZW5Db3VudGVyXCI6MCxcInZlcnNpb25cIjoxOCxcInVuaXRcIjoxLFwiaXNSdWxlck9uXCI6ZmFsc2UsXCJ1aVwiOlwiXCJ9In0=",
   "omnisharp.enableDecompilationSupport": true,
-  "omnisharp.enableAsyncCompletion": true,
+  // "omnisharp.enableAsyncCompletion": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "workbench.colorTheme": "Visual Studio Light",
+  "workbench.colorTheme": "IDEA like light Theme",
   "coverage-gutters.showRulerCoverage": true,
   "coverage-gutters.showLineCoverage": true,
   "coverage-gutters.showGutterCoverage": false,
@@ -233,4 +255,8 @@
   "terminal.external.osxExec": "iTerm2.app",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.defaultProfile.osx": "fish",
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
+  },
+  "workbench.editor.showTabs": true,
 }

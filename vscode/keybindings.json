@@ -302,5 +302,9 @@
     {
         "key": "cmd+b cmd+o",
         "command": "workbench.action.files.openFileFolder"
+    },
+    {
+        "key": "cmd+b cmd+n",
+        "command": "workbench.view.extension.test"
     }
 ]
