@@ -113,11 +113,6 @@
         "when": "!notebookEditorFocused && editorLangId == 'markdown'"
     },
     {
-        "key": "cmd+m cmd+p",
-        "command": "markdown.extension.closePreviewToSide",
-        "when": "markdownPreviewFocus"
-    },
-    {
         "key": "cmd+k v",
         "command": "-markdown.extension.closePreviewToSide",
         "when": "markdownPreviewFocus"
@@ -178,10 +173,6 @@
     {
         "key": "cmd+m cmd+y",
         "command": "markdown.extension.toc.update"
-    },
-    {
-        "key": "cmd+m cmd+p",
-        "command": "markdown.showPreview"
     },
     {
         "key": "cmd+o cmd+a",
@@ -306,5 +297,25 @@
     {
         "key": "cmd+b cmd+n",
         "command": "workbench.view.extension.test"
+    },
+    {
+        "key": "cmd+m cmd+p",
+        "command": "markdown-preview-enhanced.openPreview",
+        "when": "editorLangId == 'markdown'"
+    },
+    {
+        "key": "shift+cmd+v",
+        "command": "-markdown-preview-enhanced.openPreview",
+        "when": "editorLangId == 'markdown'"
+    },
+    {
+        "key": "cmd+t cmd+c",
+        "command": "testing.runAtCursor",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+; c",
+        "command": "-testing.runAtCursor",
+        "when": "editorTextFocus"
     }
 ]
