@@ -11,6 +11,7 @@ rm -rf ./neovim
 mkdir neovim
 
 cp -r ~/.config/nvim/airline.vim ./neovim/airline.vim
+cp -r ~/.config/nvim/coc.vim ./neovim/coc.vim
 cp -r ~/.config/nvim/coc-settings.json ./neovim/coc-settings.json
 cp -r ~/.config/nvim/init.vim ./neovim/init.vim
 cp -r ~/.config/nvim/keymaps.vim ./neovim/keymaps.vim
