@@ -5,6 +5,7 @@ cp -f ./vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybind
 cp -f ./vscode/tasks.json ~/Library/Application\ Support/Code/User/tasks.json
 
 cp -f ./neovim/airline.vim  ~/.config/nvim/airline.vim 
+cp -f ./neovim/coc.vim ~/.config/nvim/coc.vim
 cp -f ./neovim/coc-settings.json  ~/.config/nvim/coc-settings.json 
 cp -f ./neovim/init.vim  ~/.config/nvim/init.vim 
 cp -f ./neovim/keymaps.vim ~/.config/nvim/keymaps.vim 

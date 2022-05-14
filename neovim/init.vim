@@ -27,3 +27,5 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
+let g:python_host_prog = '/Users/vdoroshenko/.pyenv/shims/python'
+let g:python3_host_prog = '/Users/vdoroshenko/.pyenv/shims/python3'

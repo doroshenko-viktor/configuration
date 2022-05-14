@@ -317,5 +317,13 @@
         "key": "cmd+; c",
         "command": "-testing.runAtCursor",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+t cmd+f",
+        "command": "test-explorer.run-this-file"
+    },
+    {
+        "key": "shift+cmd+f11",
+        "command": "editor.action.goToTypeDefinition"
     }
 ]

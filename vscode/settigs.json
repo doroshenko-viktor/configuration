@@ -1,7 +1,21 @@
 {
   // "editor.hover.enabled": false, // disable hint widnow on mouse hover
+  "editor.cursorStyle": "line",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.tabCompletion": "on",
+  "editor.formatOnType": true,
+  "diffEditor.wordWrap": "on",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.insertSpaces": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false,
+    "source.organizeImports": true,
+    "addMissingImports": true,
+  },
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": true,
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 1.6,
   "editor.cursorBlinking": "expand",
   "editor.cursorSmoothCaretAnimation": true,
   "editor.minimap.enabled": false,
@@ -40,6 +54,7 @@
     "GTD’s",
     "IELTS",
     "Immat",
+    "instanceof",
     "ITWO",
     "kibana",
     "KVPs",
@@ -103,7 +118,6 @@
   "swaggerViewer.previewInBrowser": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "go.formatTool": "goimports",
-  "go.useLanguageServer": true,
   "files.exclude": {
     ".history": true,
     ".idea": true,
@@ -162,17 +176,18 @@
       ]
     }
   ],
-  "csharp.maxProjectFileCountForDiagnosticAnalysis": 100,
-  "csharp.semanticHighlighting.enabled": true,
-  "omnisharp.maxFindSymbolsItems": 10,
-  "omnisharp.maxProjectResults": 10,
-  "omnisharp.enableEditorConfigSupport": true,
-  "omnisharp.enableImportCompletion": true,
-  "omnisharp.enableRoslynAnalyzers": true,
+  "omnisharp.useModernNet": true,
+  "omnisharp.path": "1.38.2",
   // "omnisharp.path": "latest",
-  // "omnisharp.path": "1.23.17",
-  "omnisharp.useGlobalMono": "never",
-  "omnisharp.minFindSymbolsFilterLength": 3,
+  // "csharp.maxProjectFileCountForDiagnosticAnalysis": 100,
+  // "csharp.semanticHighlighting.enabled": true,
+  // "omnisharp.maxFindSymbolsItems": 10,
+  // "omnisharp.maxProjectResults": 10,
+  // "omnisharp.enableEditorConfigSupport": true,
+  // "omnisharp.enableImportCompletion": true,
+  // "omnisharp.enableRoslynAnalyzers": true,
+  // "omnisharp.useGlobalMono": "never",
+  // "omnisharp.minFindSymbolsFilterLength": 3,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.pinnedTabSizing": "shrink",
   "workbench.fontAliasing": "antialiased",
@@ -183,14 +198,21 @@
   "gitlens.defaultDateFormat": null,
   "git.autofetch": true,
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.showUnused": false,
   },
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.referencesCodeLens.enabled": true,
+  "typescript.implementationsCodeLens.enabled": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
   "editor.renderWhitespace": "all",
   "go.toolsManagement.autoUpdate": true,
-  "redhat.telemetry.enabled": false,
   "todo-tree.general.tags": [
     "BUG",
     "HACK",
@@ -203,21 +225,14 @@
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "rust-client.rustupPath": "~/.cargo/bin/rustup",
   "liveServer.settings.donotShowInfoMsg": true,
-  "omnisharp.loggingLevel": "warning",
-  "editor.cursorStyle": "line",
-  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-  "editor.tabCompletion": "on",
-  "editor.formatOnType": true,
-  "diffEditor.wordWrap": "on",
-  "editor.acceptSuggestionOnCommitCharacter": false,
-  "editor.insertSpaces": true,
+  // "omnisharp.loggingLevel": "warning",
   "python.defaultInterpreterPath": "/usr/local/opt/python@3.8/bin/python3.8",
   "notebook.cellToolbarLocation": {
     "default": "right",
     "jupyter-notebook": "left"
   },
-  "omnisharp.organizeImportsOnFormat": true,
-  "omnisharp.enableDecompilationSupport": true,
+  // "omnisharp.organizeImportsOnFormat": true,
+  // "omnisharp.enableDecompilationSupport": true,
   // "omnisharp.enableAsyncCompletion": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "workbench.colorTheme": "Default Light+",
@@ -252,7 +267,8 @@
     "editor.defaultFormatter": "vscode.html-language-features"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.showUnused": false
   },
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
@@ -276,4 +292,17 @@
   "[toml]": {
     "editor.defaultFormatter": "be5invis.toml"
   },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "editor.fontFamily": "JetBrainsMonoNerdFont-Medium, Menlo, Monaco, 'Courier New', monospace",
+  "rust-analyzer.hoverActions.references": true,
+  "rust-analyzer.hover.documentation": false,
+  "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
+  "rust-analyzer.joinLines.joinAssignments": false,
+  "rust-analyzer.joinLines.joinElseIf": false,
+  "rust-analyzer.joinLines.removeTrailingComma": false,
+  "rust-analyzer.joinLines.unwrapTrivialBlock": false,
+  "rust-analyzer.lens.methodReferences": true,
+  "editor.linkedEditing": true,
 }
